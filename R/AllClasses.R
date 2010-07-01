@@ -114,11 +114,15 @@ setMethod("summary",
 
 setMethod("plot",
 		signature(x = "HWEintr", y = "missing"),
-		function(x, xlab = "Iteration", ylab = "Monte Carlo Average", ...) {
+		function(x, xlab = "Iteration", ylab = "Monte Carlo Average of Bayes Factor", ...) {
 			M <- length(x@draws)
-			res <- cumsum(x@draws)/(1:M)
-			plot(1:M, res, xlab = xlab, ylab = ylab, main = "", col = gray(0), type = "n")
+			d <- x@draws 
+			res <- cumsum(d)/(1:M)
+			sdres <- sqrt(cumsum((d - res)^2))/(1:M)
+			plot(1:M, res, xlab = xlab, ylab = ylab, main = "", col = gray(0), type = "n", ylim = mean(res) + 20*c(-sdres[M], sdres[M]))
 			abline(h = x@bf, col = gray(.5), lty = "longdash")
-			lines(1:M, res, xlab = xlab, ylab = ylab, main = "", col = gray(0))
+			lines(1:M, res, xlab = xlab, ylab = ylab, main = "", col = gray(0), lwd = 2)
+			lines(res + 2*sdres, col = "gold", lwd = 2)
+			lines(res - 2*sdres, col = "gold", lwd = 2)
 		}
 )

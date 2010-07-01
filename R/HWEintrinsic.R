@@ -2,14 +2,14 @@ hwe.ibf.mc <- function(y, t, M = 10000, verbose = TRUE) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	if ((t <= 0) | (is.null(t))) {
-		stop("The training sample size t has to be an integer in between 1 and the sample size n.")
-	}
 	y.tmp <- y@data
 	r <- y@size
 	R <- r*(r + 1)/2
 	y.vec <- y@vec
 	n <- sum(y.vec, na.rm = TRUE)
+	if ((t <= 0) | (t > n) | (is.null(t))) {
+		stop("The training sample size t has to be an integer in between 1 and the sample size n.")
+	}
 	r.i <- rowSums(y.tmp, na.rm = TRUE)
 	c.i <- colSums(y.tmp, na.rm = TRUE)
 	theta.hat <- (y.vec + 1)/(n + R)
