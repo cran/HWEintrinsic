@@ -1,5 +1,9 @@
 \name{Lindley}
 \alias{Lindley}
+\alias{dataL1}
+\alias{dataL2}
+\alias{dataL3}
+\alias{dataL4}
 \docType{data}
 \title{Lindley (1988) Two Alleles Data}
 \description{

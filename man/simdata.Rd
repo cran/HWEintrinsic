@@ -1,5 +1,9 @@
 \name{simdata}
 \alias{simdata}
+\alias{dataset1}
+\alias{dataset2}
+\alias{dataset3}
+\alias{dataset4}
 \docType{data}
 \title{Two Alleles Simulated Data}
 \description{
