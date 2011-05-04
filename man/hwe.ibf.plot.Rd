@@ -2,7 +2,7 @@
 \alias{hwe.ibf.plot}
 \title{Plot of an Hardy-Weinberg Testing Analysis}
 \description{
-  Plot of the null posterior probability of a Hardy-Weinberg testing problem based on intrinsic priors as described in Consonni et al. (2010).
+  Plot of the null posterior probability of a Hardy-Weinberg testing problem based on intrinsic priors as described in Consonni et al. (2011).
 }
 \usage{
 hwe.ibf.plot(y, t.vec, M = 1e+05, bf = FALSE)
@@ -22,8 +22,11 @@ hwe.ibf.plot(y, t.vec, M = 1e+05, bf = FALSE)
    \item{std}{vector containing the standard Bayes factor and the null posterior probability for the data in hand.}
    \item{exact}{matrix containing the exact values of the Bayes factor and the null posterior probability for each training sample size in \code{t.vec}; available only for the two alleles case.}
 }
+\note{
+  The Bayes factor computed here is for the unrestricted model (\eqn{M_1}{M_1}) against the Hardy-Weinberg case (\eqn{M_0}{M_0}).
+}
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \seealso{
@@ -31,12 +34,12 @@ hwe.ibf.plot(y, t.vec, M = 1e+05, bf = FALSE)
    \code{\link{hwe.ibf.mc}}.
 }
 \examples{
-# The following code reproduces Figure 4 in Consonni et al. (2010) #
+# The following code reproduces Figure 4 in Consonni et al. (2011) #
 \donttest{
 # ATTENTION: it may take a long time to run! #
 
 data(simdata)
-n <- sum(dataset1@vec, na.rm = TRUE)
+n <- sum(dataset1@data.vec, na.rm = TRUE)
 f <- c(.1,.5,1)
 t <- round(f*n)
 p11 <- p21 <- seq(0,1,length.out=100)
@@ -50,10 +53,10 @@ r <- 2
 R <- r*(r + 1)/2
 l <- 4
 tables <- matrix(NA, nrow = R, ncol = l)
-tables[, 1] <- dataset1@vec
-tables[, 2] <- dataset2@vec
-tables[, 3] <- dataset3@vec
-tables[, 4] <- dataset4@vec
+tables[, 1] <- dataset1@data.vec
+tables[, 2] <- dataset2@data.vec
+tables[, 3] <- dataset3@data.vec
+tables[, 4] <- dataset4@data.vec
 lik <- array(NA, c(l, length(p11), length(p21)))
 M <- 300000
 par(mfrow = c(4, 4))

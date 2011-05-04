@@ -14,17 +14,16 @@
 }
 \references{
   Cavalli-Sforza, L. and Bodmer, W. (1971), "The Genetics of Human Populations". W.H. Freeman and Company, San Francisco.
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report.
-  \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \examples{
 # Example 1 #
 
 data(GuoThompson9)
 plot(GuoThompson9)
-n <- sum(GuoThompson9@vec, na.rm = TRUE)
-res <- hwe.ibf.mc(GuoThompson9, t = n/2, M = 100000, verbose = TRUE)
-summary(res, plot = TRUE)
+n <- sum(GuoThompson9@data.vec, na.rm = TRUE)
+out <- hwe.ibf.mc(GuoThompson9, t = n/2, M = 100000, verbose = TRUE)
+summary(out, plot = TRUE)
 
 # Example 2 #
 \donttest{
@@ -32,7 +31,7 @@ summary(res, plot = TRUE)
 
 M <- 300000
 f <- seq(.1, 1, .05)
-n <- sum(GuoThompson9@vec, na.rm = TRUE)
+n <- sum(GuoThompson9@data.vec, na.rm = TRUE)
 out <- hwe.ibf.plot(y = GuoThompson9, t.vec = round(f*n), M = M)
 }
 }

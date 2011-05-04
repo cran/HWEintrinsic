@@ -2,7 +2,7 @@
 \alias{hwe.ibf}
 \title{Testing Hardy-Weinberg Equilibrium Using an Intrinsic Prior Approach}
 \description{
-  This function implements the exact calculation of the Bayes factor based on intrinsic priors for the Hardy-Weinberg testing problem as described in Consonni et al. (2010).
+  This function implements the exact calculation of the Bayes factor based on intrinsic priors for the Hardy-Weinberg testing problem as described in Consonni et al. (2011).
 }
 \usage{
 hwe.ibf(y, t)
@@ -18,10 +18,10 @@ hwe.ibf(y, t)
   \code{hwe.ibf} returns the value of the Bayes factor based on intrinsic priors.
 }
 \note{
-  This function provides the output only for two alleles case.
+  The Bayes factor computed here is for the unrestricted model (\eqn{M_1}{M_1}) against the Hardy-Weinberg case (\eqn{M_0}{M_0}). This function provides the output only for the two alleles case.
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \seealso{
@@ -32,7 +32,7 @@ hwe.ibf(y, t)
 data(Lindley)
 hwe.ibf.exact <- Vectorize(hwe.ibf, "t")
 f <- seq(.05, 1, .05)
-n <- sum(dataL1@vec, na.rm = TRUE)
+n <- sum(dataL1@data.vec, na.rm = TRUE)
 
 # Dataset 1 #
 plot(dataL1)

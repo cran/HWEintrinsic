@@ -17,15 +17,15 @@
   Consonni, G., Gutierrez-Pena, E. and Veronese, P. (2008), "Compatible priors for Bayesian model comparison with an application to the Hardy-Weinberg equilibrium model". Test, \bold{Vol. 17}, No. 3, 585--605.  
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
-  Guo, S.W. and Thompson, E.A. (1992), "Performing the Exact Test of Hardy-Weinberg Proportion for Multiple Alleles". Biometrics, \bold{Vol. 49}, No. 2, 361--372.
-  Lindley D.V. (1988), "Statistical inference concerning Hardy-Weinberg equilibrium". In: Bernardo, J.M., DeGroot, M.H., Lindley, D.V. and Smith, A.F.M. (eds.), "Bayesian statistics 3". Oxford University Press, 307--326.  
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
+  Guo, S.W. and Thompson, E.A. (1992), "Performing the Exact Test of Hardy-Weinberg Proportion for Multiple Alleles". Biometrics, \bold{49}, 361--372.
+  Lindley D.V. (1988), "Statistical inference concerning Hardy-Weinberg equilibrium". In: Bernardo, J.M., DeGroot, M.H., Lindley, D.V. and Smith, A.F.M. (eds.), "Bayesian statistics 3". Oxford University Press, 307--326.
 }
 \examples{
 data(Lindley)
 hwe.ibf.exact <- Vectorize(hwe.ibf, "t")
 f <- seq(.05, 1, .05)
-n <- sum(dataL1@vec, na.rm = TRUE)
+n <- sum(dataL1@data.vec, na.rm = TRUE)
 
 # Dataset 1 #
 plot(dataL1)

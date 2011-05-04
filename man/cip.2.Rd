@@ -2,7 +2,7 @@
 \alias{cip.2}
 \title{Graph of the Conditional Intrinsic Prior for a Two Alleles Dataset}
 \description{
-  This function produces the 3D plot for the conditional intrinsic prior based on a sample of two alleles data as described in Consonni et al. (2010).
+  This function produces the 3D plot for the conditional intrinsic prior based on a sample of two alleles data as described in Consonni et al. (2011).
 }
 \usage{
   cip.2(t, p, k = 30)
@@ -16,7 +16,7 @@
   No object is returned by this function.
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \note{
@@ -27,7 +27,7 @@
   \code{\link{plot-methods}}.
 }
 \examples{
-### The following code reproduces Figure 1 in Consonni et al. (2010) ###
+### The following code reproduces Figure 1 in Consonni et al. (2011) ###
 p <- 0.5
 t <- 5
 cip.2(t, p, 30)

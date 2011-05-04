@@ -2,7 +2,7 @@
 \alias{cip.tmp}
 \title{Utility Function}
 \description{
-  This function provides the calculations needed to plot the conditional intrinsic prior based for a two alleles dataset as described in Consonni et al. (2010). 
+  This function provides the calculations needed to plot the conditional intrinsic prior based for a two alleles dataset as described in Consonni et al. (2011). 
 }
 \usage{
   cip.tmp(p11, p21, t, p)
@@ -17,7 +17,7 @@
   \code{cip.tmp} returns the value of the conditional intrinsic prior evaluated at the arguments values.
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \seealso{

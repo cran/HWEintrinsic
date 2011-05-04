@@ -13,17 +13,16 @@
   Guo, S.W. and Thompson, E.A. (1992), "Performing the Exact Test of Hardy-Weinberg Proportion for Multiple Alleles". Biometrics, \bold{Vol. 48}, No. 2, 361--372.
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report.
-  \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \examples{
 # Example 1 #
 
 data(GuoThompson8)
 plot(GuoThompson8)
-n <- sum(GuoThompson8@vec, na.rm = TRUE)
-res <- hwe.ibf.mc(GuoThompson8, t = n/2, M = 100000, verbose = TRUE)
-summary(res, plot = TRUE)
+n <- sum(GuoThompson8@data.vec, na.rm = TRUE)
+out <- hwe.ibf.mc(GuoThompson8, t = n/2, M = 100000, verbose = TRUE)
+summary(out, plot = TRUE)
 
 # Example 2 #
 \donttest{
@@ -31,7 +30,7 @@ summary(res, plot = TRUE)
 
 M <- 300000
 f <- seq(.1, 1, .05)
-n <- sum(GuoThompson8@vec, na.rm = TRUE)
+n <- sum(GuoThompson8@data.vec, na.rm = TRUE)
 out <- hwe.ibf.plot(y = GuoThompson8, t.vec = round(f*n), M = M)
 }
 }

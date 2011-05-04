@@ -2,19 +2,19 @@ hwe.ibf.mc <- function(y, t, M = 10000, verbose = TRUE) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	y.tmp <- y@data
+	y.mat <- y@data.mat
 	r <- y@size
 	R <- r*(r + 1)/2
-	y.vec <- y@vec
+	y.vec <- y@data.vec
 	n <- sum(y.vec, na.rm = TRUE)
 	if ((t <= 0) | (t > n) | (is.null(t))) {
 		stop("The training sample size t has to be an integer in between 1 and the sample size n.")
 	}
-	r.i <- rowSums(y.tmp, na.rm = TRUE)
-	c.i <- colSums(y.tmp, na.rm = TRUE)
+	r.i <- rowSums(y.mat, na.rm = TRUE)
+	c.i <- colSums(y.mat, na.rm = TRUE)
 	theta.hat <- (y.vec + 1)/(n + R)
 	const <- lfactorial(t) + lfactorial(t + R - 1) + lfactorial(2*n + r - 1) - lfactorial(2*t + r - 1) - lfactorial(n + t + R - 1) -
-			(n - sum(diag(y.tmp)))*log(2) - sum(lfactorial(r.i + c.i))
+			(n - sum(diag(y.mat)))*log(2) - sum(lfactorial(r.i + c.i))
 	bf.draws <- vector(length = M)
 	for (k in 1:M) {
 		x.vec <- rmultinom(1, t, theta.hat)
@@ -33,7 +33,7 @@ hwe.ibf.mc <- function(y, t, M = 10000, verbose = TRUE) {
 	bf.draws <- exp(bf.draws)
 	bf_mc <- mean(bf.draws)
 	npp <- 1/(1 + bf_mc)
-	out <- new("HWEintr", bf = bf_mc, npp = npp, draws = bf.draws, data = y.tmp)
+	out <- new("HWEintr", bf = bf_mc, npp = npp, draws = bf.draws, data = y.mat)
 	return(out)
 }
 
@@ -41,16 +41,16 @@ hwe.ibf <- function(y, t) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	y.tmp <- y@data
 	r <- y@size
 	if (r != 2) {
 		stop("The exact calculation for the Bayes Factor based on intrinsic priors is available only for r (number of alleles) equal to 2.")
 	}
+	y.mat <- y@data.mat
+	y.vec <- y@data.vec
 	R <- r*(r + 1)/2
-	y.vec <- y@vec
 	n <- sum(y.vec, na.rm = TRUE)
-	r.i <- rowSums(y.tmp, na.rm = TRUE)
-	c.i <- colSums(y.tmp, na.rm = TRUE)
+	r.i <- rowSums(y.mat, na.rm = TRUE)
+	c.i <- colSums(y.mat, na.rm = TRUE)
 	C <- choose(t + R - 1, R - 1)
 	tables <- matrix(NA, nrow = R, ncol = C)
 	indx <- 1
@@ -61,7 +61,7 @@ hwe.ibf <- function(y, t) {
 		}
 	}
 	const <- lfactorial(t) + lfactorial(t + R - 1) + lfactorial(2*n + r - 1) - lfactorial(2*t + r - 1) - lfactorial(n + t + R - 1) -
-			(n - sum(diag(y.tmp)))*log(2) - sum(lfactorial(r.i + c.i))
+			(n - sum(diag(y.mat)))*log(2) - sum(lfactorial(r.i + c.i))
 	bf.log <- vector(length = C)
 	for (k in 1:C) {
 		x.vec <- tables[, k]
@@ -82,14 +82,14 @@ hwe.bf <- function(y) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	y.tmp <- y@data
+	y.mat <- y@data.mat
 	r <- y@size
 	R <- r*(r + 1)/2
-	y.vec <- y@vec
+	y.vec <- y@data.vec
 	n <- sum(y.vec, na.rm = TRUE)
-	r.i <- rowSums(y.tmp, na.rm = TRUE)
-	c.i <- colSums(y.tmp, na.rm = TRUE)
-	bf.log <- lfactorial(R - 1) + lfactorial(2*n + r - 1) - lfactorial(n + R - 1) - lfactorial(r - 1) - (n - sum(diag(y.tmp)))*log(2) -
+	r.i <- rowSums(y.mat, na.rm = TRUE)
+	c.i <- colSums(y.mat, na.rm = TRUE)
+	bf.log <- lfactorial(R - 1) + lfactorial(2*n + r - 1) - lfactorial(n + R - 1) - lfactorial(r - 1) - (n - sum(diag(y.mat)))*log(2) -
 			sum(lfactorial(r.i + c.i)) + sum(lfactorial(y.vec))
 	out <- exp(bf.log)
 	return(out)
@@ -188,7 +188,7 @@ lik.multin <- function(y, p11, p21) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	y.vec <- y@vec
+	y.vec <- y@data.vec
 	n <- sum(y.vec)
 	out <- matrix(NA, nrow = length(p11), ncol = length(p21))
 	for (i in 1:length(p11)) {
@@ -209,7 +209,7 @@ hwe.ibf.plot <- function(y, t.vec, M = 100000, bf = FALSE) {
 	if (class(y) != "HWEdata") {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
-	n <- sum(y@vec, na.rm = TRUE)
+	n <- sum(y@data.vec, na.rm = TRUE)
 	H <- length(t.vec)
 	out.mc <- matrix(NA, nrow = H, ncol = 2)
 	for (h in 1:H) {

@@ -2,7 +2,7 @@
 \alias{lik.multin}
 \title{Utility Function}
 \description{
-  This function provides the value of the likelihood function of the full (unrestricted) model, as described in Consonni et al. (2010).
+  This function provides the value of the likelihood function of the full (unrestricted) model, as described in Consonni et al. (2011).
 }
 \usage{
 lik.multin(y, p11, p21)
@@ -13,13 +13,13 @@ lik.multin(y, p11, p21)
   \item{p21}{gentotype proportion for the alleles pair \eqn{A_{2}A_{1}}{A2A1}.}
 }
 \details{
-  This function has been used to generate the likelihood contours that appear in Figure 4 of Consonni et al. (2010) (see the example below). 
+  This function has been used to generate the likelihood contours that appear in Figure 4 of Consonni et al. (2011) (see the example below). 
 }
 \value{
   This function returns the numerical value of the likelihood in correspondence of the argument values.
 }
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \note{
@@ -31,12 +31,12 @@ lik.multin(y, p11, p21)
    \code{\link{hwe.ibf.plot}}.
 }
 \examples{
-# The following code reproduces Figure 4 in Consonni et al. (2010) #
+# The following code reproduces Figure 4 in Consonni et al. (2011) #
 \donttest{
 # ATTENTION: it may take a long time to run! #
 
 data(simdata)
-n <- sum(dataset1@vec, na.rm = TRUE)
+n <- sum(dataset1@data.vec, na.rm = TRUE)
 f <- c(.1,.5,1)
 t <- round(f*n)
 p11 <- p21 <- seq(0,1,length.out=100)
@@ -50,10 +50,10 @@ r <- 2
 R <- r*(r + 1)/2
 l <- 4
 tables <- matrix(NA, nrow = R, ncol = l)
-tables[, 1] <- dataset1@vec
-tables[, 2] <- dataset2@vec
-tables[, 3] <- dataset3@vec
-tables[, 4] <- dataset4@vec
+tables[, 1] <- dataset1@data.vec
+tables[, 2] <- dataset2@data.vec
+tables[, 3] <- dataset3@data.vec
+tables[, 4] <- dataset4@data.vec
 lik <- array(NA, c(l, length(p11), length(p21)))
 M <- 300000
 par(mfrow = c(4, 4))

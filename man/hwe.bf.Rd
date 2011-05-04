@@ -2,7 +2,7 @@
 \alias{hwe.bf}
 \title{Standard Bayes Factor for the Hardy-Weinebrg Testing Problem}
 \description{
-  This function provides the calculations for obtaining the standard Bayes Factor for the Hardy-Weinberg testing problem. It implements a common default prior (constant) for both the null and the alternative models.  
+  This function provides the calculations for obtaining the standard Bayes factor for the Hardy-Weinberg testing problem. It implements a common default prior (constant) for both the null and the alternative models.  
 }
 \usage{
   hwe.bf(y)
@@ -13,8 +13,11 @@
 \value{
   \code{hwe.bf} returns the standard Bayes Factor value for the Hardy-Weinberg testing problem (see the references for the details).
 }
+\note{
+  The Bayes factor computed here is for the unrestricted model (\eqn{M_1}{M_1}) against the Hardy-Weinberg case (\eqn{M_0}{M_0}).
+}
 \references{
-  Consonni, G., Moreno, E. and Venturini, S. (2010), "Testing Hardy-Weinberg Equilibrium: an Objective Bayesian Analysis". Technical Report. \url{http://economia.unipv.it/~gconsonni/www/papers/HardyWeinberg.pdf}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
 \seealso{
