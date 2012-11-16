@@ -1,8 +1,4 @@
-.First.lib <- function(lib, pkg) {
-	if(!require(methods)) {
-		stop("'methods' package is required.")
-		require(methods)
-	}
+.onAttach <- function(lib, pkg) {
 	packageStartupMessage(sprintf("Package %s (%s) loaded.
 To cite, see citation(\"%s\")\n", pkg, packageDescription(pkg)$Version, pkg))
 }
@@ -136,7 +132,7 @@ setMethod("plot",
 					boot.iter <- apply(boot, 2, cumsum)/(1:M)
 					boot.upper <- apply(boot.iter, 1, quantile, .975)
 					boot.lower <- apply(boot.iter, 1, quantile, .025)
-					plot(1:M, res, xlab = xlab, ylab = ylab, main = "", type = "l", ylim = mean(res) + 20*c(-sdres[M], sdres[M]), lwd = 2)
+					plot(1:M, res, xlab = xlab, ylab = ylab, main = "", type = "l", ylim = (mean(res) + 20*c(-sdres[M], sdres[M])), lwd = 2)
 					lines(res - 2*sdres, col = "gold", lwd = 2)
 					lines(res + 2*sdres, col = "gold", lwd = 2)
 					lines(boot.lower, col = "orange", lwd = 2)

@@ -34,8 +34,8 @@ hwe.ibf.plot(y, t.vec, M = 1e+05, bf = FALSE)
    \code{\link{hwe.ibf.mc}}.
 }
 \examples{
+\dontrun{
 # The following code reproduces Figure 4 in Consonni et al. (2011) #
-\donttest{
 # ATTENTION: it may take a long time to run! #
 
 data(simdata)
@@ -74,8 +74,7 @@ for (k in 1:l) {
 		abline(a = 1, b = -1, lty = 3, col = gray(.8))
 	}
 	hwe.ibf.plot(y = y, t.vec = seq(1,n,1), M = M)
-}
-}
+}}
 }
 \keyword{Bayes Factor}
 \keyword{intrinsic prior}

@@ -29,6 +29,7 @@ hwe.ibf(y, t)
    \code{\link{hwe.ibf.mc}}.
 }
 \examples{
+\dontrun{
 data(Lindley)
 hwe.ibf.exact <- Vectorize(hwe.ibf, "t")
 f <- seq(.05, 1, .05)
@@ -64,7 +65,7 @@ npp.exact <- 1/(1 + hwe.ibf.exact(round(f*n), y = dataL4))
 npp.std <- 1/(1 + hwe.bf(dataL4))
 plot(f, npp.exact, type="l", lwd = 2, xlab = "f = t/n",
 	ylab = "Null posterior probability")
-abline(h = npp.std, col = gray(.5), lty = "longdash")
+abline(h = npp.std, col = gray(.5), lty = "longdash")}
 }
 \keyword{Bayes Factor}
 \keyword{intrinsic prior}

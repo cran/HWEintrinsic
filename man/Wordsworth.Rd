@@ -17,8 +17,8 @@
   Wordsworth, P., Pile, K.D., Buckley, J.D., Lanchbury, J.S.S., Ollier, B., Lathrop, M. and Bell, J.I. (1992), "HLA heterozygosity contributes to susceptibility to rheumatoid arthritis". American Journal of Human Genetics, \bold{51}, 3, 585--591.
 }
 \examples{
+\dontrun{
 # Example 1 #
-
 data(Wordsworth)
 plot(Wordsworth)
 n <- sum(Wordsworth@data.vec, na.rm = TRUE)
@@ -26,15 +26,13 @@ out <- hwe.ibf.mc(Wordsworth, t = n/2, M = 100000, verbose = TRUE)
 summary(out, plot = TRUE)
 
 # Example 2 #
-\donttest{
 # ATTENTION: the following code may take a long time to run! #
 
 data(Wordsworth)
 n <- sum(Wordsworth@data.vec, na.rm = TRUE)
 M <- 300000
 f <- seq(.1, 1, .05)
-out <- hwe.ibf.plot(y = Wordsworth, t.vec = round(f*n), M = M)
-}
+out <- hwe.ibf.plot(y = Wordsworth, t.vec = round(f*n), M = M)}
 }
 \keyword{datasets}
 \keyword{HWE}

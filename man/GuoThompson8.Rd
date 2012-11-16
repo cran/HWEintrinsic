@@ -16,8 +16,8 @@
   Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
 \examples{
+\dontrun{
 # Example 1 #
-
 data(GuoThompson8)
 plot(GuoThompson8)
 n <- sum(GuoThompson8@data.vec, na.rm = TRUE)
@@ -25,14 +25,12 @@ out <- hwe.ibf.mc(GuoThompson8, t = n/2, M = 100000, verbose = TRUE)
 summary(out, plot = TRUE)
 
 # Example 2 #
-\donttest{
 # ATTENTION: the following code may take a long time to run! #
 
 M <- 300000
 f <- seq(.1, 1, .05)
 n <- sum(GuoThompson8@data.vec, na.rm = TRUE)
-out <- hwe.ibf.plot(y = GuoThompson8, t.vec = round(f*n), M = M)
-}
+out <- hwe.ibf.plot(y = GuoThompson8, t.vec = round(f*n), M = M)}
 }
 \keyword{datasets}
 \keyword{HWE}

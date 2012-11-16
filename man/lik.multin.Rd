@@ -32,7 +32,7 @@ lik.multin(y, p11, p21)
 }
 \examples{
 # The following code reproduces Figure 4 in Consonni et al. (2011) #
-\donttest{
+\dontrun{
 # ATTENTION: it may take a long time to run! #
 
 data(simdata)

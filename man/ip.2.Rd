@@ -26,9 +26,10 @@
   \code{\link{plot-methods}}.
 }
 \examples{
+\dontrun{
 ### The following code reproduces Figure 3 in Consonni et al. (2011) ###
 t <- 30
-ip.2(t, 40)
+ip.2(t, 40)}
 }
 \keyword{intrinsic prior}
 \keyword{unconditional intrinsic prior}

@@ -18,8 +18,8 @@
   Thomson, G., Klitz, W., Louis, E., Lo, S., Bertrams, L., Baur, M., and Neugebauer, M. (1986), "HLA and IDDM predisposition: New aspects". Genetic Epidemiology, \bold{Vol. 1}, No. 2, 363--368.
 }
 \examples{
+\dontrun{
 # Example 1 #
-
 data(LouisDempster)
 plot(LouisDempster)
 n <- sum(LouisDempster@data.vec, na.rm = TRUE)
@@ -27,14 +27,12 @@ out <- hwe.ibf.mc(LouisDempster, t = n/2, M = 100000, verbose = TRUE)
 summary(out, plot = TRUE)
 
 # Example 2 #
-\donttest{
 # ATTENTION: the following code may take a long time to run! #
 
 M <- 300000
 f <- seq(.1, 1, .05)
 n <- sum(LouisDempster@data.vec, na.rm = TRUE)
-out <- hwe.ibf.plot(y = LouisDempster, t.vec = round(f*n), M = M)
-}
+out <- hwe.ibf.plot(y = LouisDempster, t.vec = round(f*n), M = M)}
 }
 \keyword{datasets}
 \keyword{HWE}

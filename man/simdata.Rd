@@ -28,7 +28,7 @@ summary(dataset4)
 plot(dataset4)
 
 # The following code reproduces Figure 4 in Consonni et al. (2011) #
-\donttest{
+\dontrun{
 # ATTENTION: it may take a long time to run! #
 
 n <- sum(dataset1@data.vec, na.rm = TRUE)
