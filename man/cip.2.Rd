@@ -28,12 +28,15 @@
 }
 \examples{
 \dontrun{
+# ATTENTION: the following code may take a long time to run! #
+
 ### The following code reproduces Figure 1 in Consonni et al. (2011) ###
 p <- 0.5
 t <- 5
 cip.2(t, p, 30)
 t <- 30
-cip.2(t, p, 50)}
+cip.2(t, p, 50)
+}
 }
 \keyword{intrinsic prior}
 \keyword{conditional intrinsic prior}

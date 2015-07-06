@@ -34,8 +34,8 @@ hwe.ibf.plot(y, t.vec, M = 1e+05, bf = FALSE)
    \code{\link{hwe.ibf.mc}}.
 }
 \examples{
-\dontrun{
 # The following code reproduces Figure 4 in Consonni et al. (2011) #
+\dontrun{
 # ATTENTION: it may take a long time to run! #
 
 data(simdata)
@@ -66,15 +66,17 @@ for (k in 1:l) {
 	
 	nlev <- 10
 	for (q in 1:length(f)) {
-		contour(p11, p21, ip[q,,], xlab = expression(p[11]), ylab = expression(p[21]),
-				nlevels = nlev, col = gray(0), main = "", cex.axis = 1.75,
-				cex.lab = 1.75, labcex = 1.4)
+		contour(p11, p21, ip[q,,], xlab = expression(p[11]),
+				ylab = expression(p[21]), nlevels = nlev, col = gray(0),
+				main = "", cex.axis = 1.75, cex.lab = 1.75, labcex = 1.4)
 		lines(p11^2, 2*p11*(1 - p11), lty = "longdash", col = gray(0), lwd = 2)
-		contour(p11, p21, lik[k,,], nlevels = nlev, add = TRUE, col = gray(.7), labcex = 1.2)
+		contour(p11, p21, lik[k,,], nlevels = nlev, add = TRUE,
+				col = gray(.7), labcex = 1.2)
 		abline(a = 1, b = -1, lty = 3, col = gray(.8))
 	}
 	hwe.ibf.plot(y = y, t.vec = seq(1,n,1), M = M)
-}}
+}
+}
 }
 \keyword{Bayes Factor}
 \keyword{intrinsic prior}
