@@ -1,5 +1,5 @@
 hwe.ibf.mc <- function(y, t, M = 10000, verbose = TRUE) {
-	if (class(y) != "HWEdata") {
+	if (!inherits(y, "HWEdata")) {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
 	y.mat <- y@data.mat
@@ -38,7 +38,7 @@ hwe.ibf.mc <- function(y, t, M = 10000, verbose = TRUE) {
 }
 
 hwe.ibf <- function(y, t) {
-	if (class(y) != "HWEdata") {
+	if (!inherits(y, "HWEdata")) {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
 	r <- y@size
@@ -79,7 +79,7 @@ hwe.ibf <- function(y, t) {
 }
 
 hwe.bf <- function(y) {
-	if (class(y) != "HWEdata") {
+	if (!inherits(y, "HWEdata")) {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
 	y.mat <- y@data.mat
@@ -185,7 +185,7 @@ ip.2 <- function(t, k = 30) {
 }
 
 lik.multin <- function(y, p11, p21) {
-	if (class(y) != "HWEdata") {
+	if (!inherits(y, "HWEdata")) {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
 	y.vec <- y@data.vec
@@ -206,7 +206,7 @@ lik.multin <- function(y, p11, p21) {
 }
 
 hwe.ibf.plot <- function(y, t.vec, M = 100000, bf = FALSE) {
-	if (class(y) != "HWEdata") {
+	if (!inherits(y, "HWEdata")) {
 		stop("y argument not of class 'HWEdata'. Type '?HWEdata' for help.")
 	}
 	n <- sum(y@data.vec, na.rm = TRUE)

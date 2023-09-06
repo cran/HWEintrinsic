@@ -21,9 +21,9 @@ hwe.ibf(y, t)
   The Bayes factor computed here is for the unrestricted model (\eqn{M_1}{M_1}) against the Hardy-Weinberg case (\eqn{M_0}{M_0}). This function provides the output only for the two alleles case.
 }
 \references{
-  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
-\author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
+\author{Sergio Venturini \email{sergio.venturini@unicatt.it} }
 \seealso{
    \code{\link{hwe.ibf.plot}},
    \code{\link{hwe.ibf.mc}}.

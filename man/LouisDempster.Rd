@@ -13,7 +13,7 @@
   Louis, E. and Dempster, E. (1987), "An Exact Test for Hardy-Weinberg and Multiple Alleles". Biometrics \bold{Vol. 43}, No. 4, 805--811.
 }
 \references{
-  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
   Guo, S.W. and Thompson, E.A. (1992), "Performing the Exact Test of Hardy-Weinberg Proportion for Multiple Alleles". Biometrics, \bold{Vol. 49}, No. 2, 361--372.
   Thomson, G., Klitz, W., Louis, E., Lo, S., Bertrams, L., Baur, M., and Neugebauer, M. (1986), "HLA and IDDM predisposition: New aspects". Genetic Epidemiology, \bold{Vol. 1}, No. 2, 363--368.
 }

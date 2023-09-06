@@ -15,9 +15,9 @@
   No object is returned by this function.
 }
 \references{
-  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
 }
-\author{Sergio Venturini \email{sergio.venturini@unibocconi.it} }
+\author{Sergio Venturini \email{sergio.venturini@unicatt.it} }
 \note{
   This function provides the plot of the (unconditional) intrinsic prior only for two alleles data.
 }

@@ -13,7 +13,7 @@
   Lauretto, M.S., Nakano, F., Faria, S.R., Pereira, C.A.B. and Stern, J.M. (2009), "A straightforward multiallelic significance test for the Hardy-Weinberg equilibrium law". Genetics and Molecular Biology, \bold{Vol. 32}, No. 3, 619--625.
 }
 \references{
-  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{http://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
+  Consonni, G., Moreno, E., and Venturini, S. (2011). "Testing Hardy-Weinberg equilibrium: an objective Bayesian analysis". Statistics in Medicine, \bold{30}, 62--74. \url{https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract}
   Wordsworth, P., Pile, K.D., Buckley, J.D., Lanchbury, J.S.S., Ollier, B., Lathrop, M. and Bell, J.I. (1992), "HLA heterozygosity contributes to susceptibility to rheumatoid arthritis". American Journal of Human Genetics, \bold{51}, 3, 585--591.
 }
 \examples{
